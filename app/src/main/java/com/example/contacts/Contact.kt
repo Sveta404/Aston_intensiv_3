@@ -2,8 +2,8 @@ package com.example.contacts
 
 data class Contact(
     val id: Int,
-    var firstname: String,
-    var lastname: String,
-    var phoneNumber: String
+    val firstname: String,
+    val lastname: String,
+    val phoneNumber: String
 )
 

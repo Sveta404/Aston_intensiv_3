@@ -1,6 +1,7 @@
 package com.example.contacts
 
 class ContactsRepository {
+
     private val contacts = mutableListOf<Contact>()
 
     init {
@@ -29,9 +30,11 @@ class ContactsRepository {
         )
     }
 
-    fun deleteContact(id: Int) {
-        contacts.removeIf {
-            it.id == id
+    fun deleteContacts(ids: Set<Int>) {
+        contacts.removeAll { item ->
+            ids.firstOrNull {
+                it == item.id
+            } != null
         }
     }
 
